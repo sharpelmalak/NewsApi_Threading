@@ -5,6 +5,8 @@ import uuid
 import json, glob, os, inspect
 import tkinter as tk
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from pprint import  pprint
+
 
 # Global_Variables
 API_KEY = '8495809e3537476fb9ca75ebec9b13860'
@@ -14,6 +16,8 @@ url_list = ['http://newsapi.org/v2/top-headlines?q=biden&sortBy=publishedAt'
             'http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=' + API_KEY,
             'http://newsapi.org/v2/top-headlines?q=corona&'
             'sortBy=popularity&sources=cbs-news,cnn,reuters,the-verge,vice-news&apiKey=' + API_KEY]
+
+
 
 window = tk.Tk()
 window.geometry('1350x690+0+0')
@@ -120,4 +124,19 @@ def print_news():
 # runner()
 
 # Load GUI with Data
-print_news()
+#print_news()
+
+
+def btn1():
+  print_news()
+#Creating The Button
+button1 =  tk.Button(window, text="Get Data From Api", command=btn1)
+button2 =  tk.Button(window, text="Insert Data To DataBase", )
+button3 =  tk.Button(window, text="Get Data from DataBase", )
+button4 =  tk.Button(window, text="Exit",command=quit)
+#put on screen
+button1.pack()
+button2.pack()
+button3.pack()
+button4.pack()
+window.mainloop()
